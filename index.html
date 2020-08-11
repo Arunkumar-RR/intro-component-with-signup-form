@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon-32x32.png">
+    <title>Intro component with sign up form | Frontend mentor</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content-container">
+            <h1 class="heading">Learn to code by <br> watching others</h1>
+            <p class="content">  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+                but understanding how developers think is invaluable.</p>
+        </div>
+        <div class="signup-container">
+                <small class="alert"> <span>Try it free 7 days</span> then $20/mo. thereafter </small>
+               <form id="form" action="">
+                    <input type="text"  placeholder="First Name" name="firstname" id="firstname" required >
+                    <span id="firstnameerror"></span>
+                    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required  >
+                    <span id="lastnameerror"></span>
+                    <input type="email" placeholder="Email Address" name="emailaddress"  id="emailid" required  >
+                    <span id="emailerror"></span>
+                    <input type="password" placeholder="Password" name="password" id="password" required  >
+                    <span id="passworderror"></span>
+                    <button type="submit" onclick="validate()" class="btn">  Claim your free trial  </button>
+                    <small class="terms-and-condition">  By clicking the button, you are agreeing to our <span>Terms and Services</span> </small>
+               </form>
+        </div>
+    </div>
+  <div class="attribution">
+    <h6>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+    </h6>
+    <h6>
+      Coded by
+      <a href="http://arunkumar-rr.github.io/" target="_blank">R.R.Arunkumar</a>
+    </h6>
+</div>
+<script>
+
+        function validate()
+        {	  
+          event.preventDefault();  
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+          //values getting from valid input feild
+          var firstNameError = "First Name cannot be empty";
+          var lastNameError = "Last Name cannot be empty";
+          var emailError = "Email cannot be empty";
+          var emailvalueError = "Please provide a valid email address";
+          var passwordError = "password cannot be empty";
+          //values getting from valid input feild
+          var fn_error = document.getElementById("firstnameerror");
+          var ln_error = document.getElementById("lastnameerror");
+          var e_error = document.getElementById("emailerror");
+          var password_error = document.getElementById("passworderror");
+          //values getting from valid input feild
+          var firstName = document.getElementById("firstname"); 
+          var email = document.getElementById("emailid"); 
+          var lastName = document.getElementById("lastname"); 
+          var password = document.getElementById("password"); 
+          //firstname
+          if(firstName.value.length == 0 )
+          {
+            firstName.classList.add('invalid');
+            fn_error.style.display = "inline";
+            fn_error.innerHTML = firstNameError;
+          }
+          else
+          {
+            firstName.classList.remove('invalid');
+            fn_error.style.display = "none";
+          }
+          //lastname
+          if(lastName.value.length == 0 )
+          {
+            ln_error.style.display = "inline";
+            lastName.classList.add("invalid");
+            ln_error.innerHTML = lastNameError;
+          }
+          else{
+            ln_error.style.display = "none";
+            lastName.classList.remove("invalid");
+          }
+          //email
+          if(email.value.length == 0 )
+          {
+            e_error.style.display = "inline";
+            email.classList.add("invalid");
+            e_error.innerHTML = emailError;
+          }else if(email.value.match(mailformat))
+          {
+            e_error.style.display = "none";
+            email.classList.remove("invalid");
+          }
+          else
+          {
+            e_error.style.display = "inline";
+            email.classList.add("invalid");
+            e_error.innerHTML = emailvalueError;
+
+          }
+          //password
+          if(password.value.length == 0 )
+          {
+            password_error.style.display = "inline";
+            password.classList.add("invalid");
+            password_error.innerHTML = passwordError;
+          }
+          else
+          {
+            password_error.style.display = "none";
+            password.classList.remove("invalid");
+          }
+        }
+</script>
+</body>
+</html>

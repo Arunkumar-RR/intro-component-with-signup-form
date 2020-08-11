@@ -1,0 +1,100 @@
+#form
+{
+    @include flex(column,center,center,wrap);
+    width: 100%;
+    text-align: center;
+    background-color: $neutral-1;
+    margin: 20px 0;
+    padding: 30px 0;
+    border-radius: $border-radius-2;
+    input
+    {
+        width: 80%;
+        padding: 15px 25px;
+        margin: 10px 0;
+        border: 1px solid lightgrey;
+        border-radius: $border-radius-1;
+        font-weight: map-get($map: $font-weight, $key: semi-bold);
+        font-family: $font;
+        outline: none;
+        &:focus
+        {
+            border: 1px solid $neutral-2;
+        }
+       
+    }
+  
+    ::placeholder
+    {
+        color:$color-4;
+        font-family: $font;
+        opacity: .8;
+        font-weight: map-get($map: $font-weight, $key: semi-bold);
+    }
+    .invalid
+    {
+        border: 1px solid $color-1;
+        background-image: url(../images/icon-error.svg);
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+
+    #firstnameerror,#lastnameerror,#emailerror,#passworderror
+    {
+        display:none;
+       font-size: $font-size-5; 
+       align-self: flex-end;
+       position: relative;
+       margin:0 50px 10px 0;
+       color: $color-1;
+    }
+    .btn
+    {
+        border:none;
+        width: 80%;
+        padding: 15px;
+        background-color: $color-2;
+        border-radius: $border-radius-1;
+        color: $neutral-1;
+        font-size: $font-size-5;
+        font-weight: map-get($map: $font-weight, $key:medium );
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .terms-and-condition
+    {
+        color: $color-5;
+        margin: 10px 0 0 0;
+        width: 80%;
+        font-size: $font-size-6;
+        font-weight: map-get($map: $font-weight, $key:medium);
+        span
+        {
+            color: $color-1;
+            font-weight: map-get($map: $font-weight, $key:bold);
+        }
+    }
+}
+@include smartphone
+{
+    #form
+    {
+        width: 85%;
+        .terms-and-condition
+        {
+            width: 60%;
+        }
+        
+        #firstnameerror,#lastnameerror,#emailerror,#passworderror
+        {
+         
+            align-self: center;
+            position: static;
+            margin: 0 0 10px 0;
+        }
+        .btn
+        {
+            margin: 20px 0;
+        }
+    }
+}

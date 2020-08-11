@@ -1,0 +1,46 @@
+    $font: 'Poppins', sans-serif;
+
+    $color-1:hsl(0, 100%, 74%) ; 
+    $color-2:hsl(154, 59%, 51%); 
+    $color-3:  hsl(248, 32%, 49%);
+    $color-4:hsl(249, 10%, 26%); 
+    $color-5: hsl(246, 25%, 77%);
+    $neutral-1:white;
+    $neutral-2:black;
+
+
+    $border-radius-1:5px;
+    $border-radius-2:10px;
+    $border-radius-3:25px;
+
+
+
+    $font-size:16px;
+
+    $font-size-1:2em;
+    $font-size-2:1.5em;
+    $font-size-3:1.3em;
+    $font-size-4:.9em;
+    $font-size-5:.6em;
+    $font-size-6:.5em;
+
+
+
+    $font-weight:(
+        'regular':400,
+        'medium':500,
+        'semi-bold':600,
+        'bold':700
+
+    );
+
+    $box-shadow-1:  
+    0 0px 2.4px rgba(0, 0, 0, 0.045),
+    0 0px 19px rgba(0, 0, 0, 0.09)
+  ;
+    $box-shadow-2:
+
+    0 0.1px 2.1px rgba(0, 0, 0, 0.024),
+    0 0.4px 7.1px rgba(0, 0, 0, 0.036),
+    0 2px 32px rgba(0, 0, 0, 0.06)
+  ;
